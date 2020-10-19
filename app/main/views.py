@@ -14,3 +14,6 @@ def index():
 def source_article(id):
     source_articles = get_articles(id)
     return render_template('articles_display.html', source_articles=source_articles)
+
+
+
