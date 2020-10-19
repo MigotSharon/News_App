@@ -5,7 +5,7 @@
 * MigotSharon
 
 # Description
-* News Api is a website application that is meant for busy individual to catch up with afffairs currently happening worldwide,news are categorizes according to their sources and users are able to preview the news articles.
+* News_App is a website application that is meant for busy individual to catch up with afffairs currently happening worldwide,news are categorized according to their sources and users are able to preview the news articles.
 
 # Technologies used
 * python3.6

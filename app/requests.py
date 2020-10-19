@@ -1,22 +1,19 @@
 import json
 import urllib.request
-
 from .models import Sources, News
-
 api_key = '5d4ccde6a3854c5c85843f848b341fea'
 base_url = None
 article_url = None
-
-
 def configure_request(app):
     global api_key, base_url, article_url
     api_key = app.config['NEWS_API_KEY']
     base_url = app.config['NEWS_API_BASE_URL']
     article_url = app.config['ARTICLE_API_BASE_URL']
 
-
 def get_sources():
     sources_url = base_url.format(api_key)
+    print('*************sources url******')
+    print(sources_url)
     #print('*************sources url******')
     #print(sources_url)
     with urllib.request.urlopen(sources_url) as url:
@@ -25,13 +22,9 @@ def get_sources():
         if response['sources']:
            rep = response['sources']
         result = process_result(rep)
-
     return result
-
-
 def process_result(sources):
     result = []
-
     for news in sources:
         id = news['id']
         name = news['name']
@@ -40,17 +33,14 @@ def process_result(sources):
         category = news['category']
         language = news['language']
         country = news['country']
-
         object_news = Sources(id, name, description, url, category, language, country)
-
         if id:
             result.append(object_news)
-
     return result
-
 
 def get_articles(id):
     get_articles_url = article_url.format(id, api_key)
+    print(get_article_url)
     #print(get_article_url)
     with urllib.request.urlopen(get_articles_url) as url:
         get_source = url.read()
@@ -58,21 +48,14 @@ def get_articles(id):
         if response['articles']:
             rep = response['articles']
             result = process_articles(rep)
-
     return result
-
-
 def process_articles(articles):
     result = []
-
     for news in articles:
         description = news['description']
         urlToImage = news['urlToImage']
         publishedAt = news['publishedAt']
-
         object_news = News(description, urlToImage, publishedAt)
-
         if description:
             result.append(object_news)
-
     return result

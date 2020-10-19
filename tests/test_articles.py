@@ -7,6 +7,6 @@ class MyTestCase(unittest.TestCase):
 
     def test_articles(self):
         self.assertTrue(isinstance(self.new_article, Articles))
-        
+
 if __name__ == '__main__':
-    unittest.main()
+    unittest.main() 
