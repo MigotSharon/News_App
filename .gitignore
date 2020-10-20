@@ -1,4 +1,6 @@
 virtual/
 *.pyc
 instance/
-start.sh/
+start.sh 
+start.sh
+.git2 
