@@ -1,6 +1,6 @@
 # News_App
 
-# Author
+## Author
 
 * MigotSharon
 

@@ -8,9 +8,11 @@ class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY')
 
 
+
+
 class ProdConfig(Config):
   
-    #DEBUG = True
+    DEBUG = True
     pass
 
 
@@ -22,6 +24,10 @@ config_options = {
     'development': DevConfig,
     'production': ProdConfig
 }
+
+
+
+
 
 
 
